@@ -1,0 +1,46 @@
+﻿@page
+@using WEB.Context
+@using Microsoft.EntityFrameworkCore
+@model RegisterModel
+
+
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="/css/about_us.css" />
+	<link type="text/css" rel="stylesheet" href="/css/styles.css" />
+	<title>Магазин компьютерной техники</title>
+</head>
+
+<body>
+	<form method="post">
+		<h5>Регистрация</h5>
+		<div>
+			<label for="login">Логин:</label>
+			<input type="text" id="login" name="Login" required>
+		</div>
+		<div>
+			<label for="password">Пароль:</label>
+			<input type="password" id="password" name="Password" required>
+		</div>
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="Email" required>
+		</div>
+		<div>
+			<label for="photo">Фото:</label>
+			<input type="text" id="photo" name="Photo">
+		</div>
+		<button type="submit">Зарегистрироваться</button>
+	</form>
+
+	@if (Model.RegistrationSuccessful)
+	{
+		<p>Регистрация успешна!</p>
+	}
+	@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+	{
+		<p>@Model.ErrorMessage</p>
+	}
+</body>

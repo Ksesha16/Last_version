@@ -1,0 +1,20 @@
+﻿@page
+@model AccountModel
+
+<h1>Личный аккаунт</h1>
+
+<div>
+    <h3>Логин: @Model.User.UserName</h3>
+    <h3>Пароль: @Model.User.Password</h3>
+
+    <h3>Фотография:</h3>
+    
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="photoFile">Выберите фотографию:</label>
+            <input type="file" class="form-control-file" id="photoFile" name="PhotoFile">
+        </div>
+        <button type="submit" class="btn btn-primary">Загрузить фото</button>
+    </form>
+</div>
